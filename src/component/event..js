@@ -45,7 +45,7 @@ function EventManagement() {
   return (
     <div>
       <div className="centered">
-      <h3> welcome  to the {username} </h3>
+      <h3> welcome  to the Evento  {username} </h3>
       </div>
       
       <ul>
