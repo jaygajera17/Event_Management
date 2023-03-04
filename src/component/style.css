@@ -17,7 +17,7 @@
   .card-image {
     height: 400px;
     width: 400px;
-    background-image: url("https://picsum.photos/400/600");
+    background-image: url("https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZXZlbnQlMjBtYW5hZ2VtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60");
     background-size: cover;
     background-position: center;
   }
@@ -101,7 +101,7 @@
   .card-image {
     height: 350px;
     width: 350px;
-    background-image: url("https://picsum.photos/400/600");
+    background-image: url("https://images.unsplash.com/photo-1468359601543-843bfaef291a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZXZlbnQlMjBtYW5hZ2VtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60");
     background-size: cover;
     background-position: center;
   }
@@ -223,4 +223,32 @@ button[type="submit"]:hover {
   justify-content: center;
   align-items: center;
   height: 15vh;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
 }

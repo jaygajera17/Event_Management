@@ -30,7 +30,7 @@ function Home() {
                 borderRadius: '5px',
               }}
             >
-              See Events
+              All Events
             </Link>
           </li>
           <li style={{ display: 'inline-block', marginRight: '20px' }}>
@@ -47,7 +47,7 @@ function Home() {
               Add Event
             </Link>
           </li>
-          <li style={{ display: 'inline-block' }}>
+          <li style={{ display: 'inline-block',marginRight: '20px' }}>
             <Link
               to="/deleteevent"
               style={{
@@ -59,6 +59,20 @@ function Home() {
               }}
             >
               Delete Event
+            </Link>
+          </li>
+          <li style={{ display: 'inline-block' }}>
+            <Link
+              to="/joined"
+              style={{
+                color: 'white',
+                backgroundColor: '#0077b6',
+                padding: '10px 20px',
+                textDecoration: 'none',
+                borderRadius: '5px',
+              }}
+            >
+              joined people
             </Link>
           </li>
         </ul>

@@ -3,13 +3,41 @@ import axios from 'axios';
 import './style.css';
 function EventManagement() {
   const [events, setEvents] = useState([]);
-
+ 
   useEffect(() => {
    fetch('https://localhost:7015/api/Events')
    
   .then(response => response.json())
       .then(data => setEvents(data));
   }, []);
+  const Register = async (eventName) => {
+   const newevent={
+      eventName,
+      username
+    }
+    try {
+      const response = await fetch(
+        "https://localhost:7015/api/Joins",
+        {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              'Access-Control-Allow-Origin': '*',
+            },
+            
+            body: JSON.stringify(newevent),
+          });
+          
+      console.log(response);
+      window.location.reload();
+
+      
+    } catch (error) {
+      console.log(error);
+    }
+   alert(`${username} you are successfully register for ${eventName} event`);
+  };
+
 
   const username = localStorage.getItem('username');
 
@@ -32,7 +60,7 @@ function EventManagement() {
           <span className="card-duration">{event.eventDuration}</span>
         </div>
         <p className="card-description">{event.eventDescription}</p>
-        <button className="card-button">Register Now</button>
+        <button className="card-button" onClick={()=>Register(event.eventName)}>Register Now</button>
       </div>
     </div>
            

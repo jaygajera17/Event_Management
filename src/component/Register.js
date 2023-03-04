@@ -33,7 +33,7 @@ function Register() {
             }
             else
             {
-                redirect("/fetchvents");
+                navigate("/fetchevent");
             }
             localStorage.setItem('username', username);
 
@@ -47,6 +47,9 @@ function Register() {
 
     return (
         <div>
+              <div className="centered">
+      <h3> Register/Login </h3>
+      </div>
             <form onSubmit={handleSubmit} className="event-form" >
                 <div className="form-group">
                     <label htmlFor="email">Email:</label>
