@@ -4,7 +4,7 @@ and for admin to manage users/participants and events.
 - Developed the backend using .NET Core Web API to provide 
 scalable RESTful services and for used React.js for the 
 frontend to consume endpoints.
-- Integrated an OpenAI chatbot to assist users.
+- Integrated an <b>OpenAI </b> chatbot to assist users.
 - Also Implemented JWT authentication for secure login and 
 registration.
 - Tech: .Net , React.js , MSSQL , Swagger UI , OpenAI
