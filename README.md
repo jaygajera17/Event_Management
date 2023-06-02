@@ -1,4 +1,4 @@
-### Evento( event management system)
+## Event Management System
 - Implemented functionalities for organizers to manage events 
 and for admin to manage users/participants and events.
 - Developed the backend using .NET Core Web API to provide 
@@ -8,6 +8,17 @@ frontend to consume endpoints.
 - Also Implemented JWT authentication for secure login and 
 registration.
 - Tech: .Net , React.js , MSSQL , Swagger UI , OpenAI
+
+## Running step
+
+### Backend
+- open backend folder in visual studio 
+- go to controller folder put your openAI api key.
+- go to package manager console run these commands 1) Add-Migration eventcontext 2) Update-DataBase
+- start the https server
+
+### Frontend
+- go to project directory and run "npm start" command.
 
 
 ## User
