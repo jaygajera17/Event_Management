@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
+import UpdateEventForm from './UpdateEventForm';
 function Deleteevent() {
   const [events, setEvents] = useState([]);
   
@@ -16,6 +17,10 @@ function Deleteevent() {
       .then((data) => setEvents(data));
   };
 
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
   const Deleteevent = async (eventId) => {
     await fetch(`https://localhost:7015/api/Events/${eventId}`, {
       method: 'DELETE',
@@ -24,12 +29,28 @@ function Deleteevent() {
         'Access-Control-Allow-Origin': '*',
       },
     });
-    fetchEvents();
+    // fetchEvents();
   };
 
-     
-    
-   
+  // const Updateevent = async (eventId) => {
+  //   await fetch(`https://localhost:7015/api/Events/${eventId}`, {
+  //     method: 'PUT',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Access-Control-Allow-Origin': '*',
+  //     },
+  //   });
+  //   fetchEvents();
+  // };
+ 
+  const [currentEvent, setCurrentEvent] = useState();
+
+   const handleUpdateClick = (event) => {
+    setCurrentEvent(event);
+  };
+  
+
+
 
 
 
@@ -42,10 +63,41 @@ function Deleteevent() {
  
 // console.log(windows.Access-Control-Allow-Origin)
   return (
+    
     <div>
-      <h1>Evento</h1>
+      {currentEvent && (
+  <UpdateEventForm
+    event={currentEvent}
+    onUpdate={(eventId, updatedEvent) => {
+      // Call your update API here
+     try {
+        const response = fetch(`https://localhost:7015/api/Events/${eventId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            'Access-Control-Allow-Origin': '*',
+
+          },
+          body: JSON.stringify(updatedEvent),
+          
+        });
+        
+        
+        // onUpdate(event.eventId, updatedEvent);
+        console.log(response);
+        if (response.ok) {
+         // onUpdate(event.eventId, updatedEvent);
+        } else {
+          console.log("Update failed");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }}
+  />
+)}
+
       
-      <button onClick={fetchEvents}>fetch Event</button>
       <ul>
       {events.map((event) => (
            
@@ -58,7 +110,9 @@ function Deleteevent() {
         <span className="card-duration">{event.eventDuration}</span>
       </div>
       <p className="card-description">{event.eventDescription}</p>
-      <button className="card-button" onClick={() => Deleteevent(event.eventId)}>DELETE</button>
+      <button className="card-button mx-3" onClick={() => Deleteevent(event.eventId)}>DELETE</button> 
+      <button className="card-button" onClick={() => handleUpdateClick(event)}>Update</button>
+    
     </div>
   </div>
          

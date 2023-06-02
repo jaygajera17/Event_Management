@@ -19,20 +19,7 @@ function Home() {
           Welcome to the Event Management System!
         </h1>
         <ul style={{ listStyle: 'none', padding: 0 }}>
-          <li style={{ display: 'inline-block', marginRight: '20px' }}>
-            <Link
-              to="/fetchevent"
-              style={{
-                color: 'white',
-                backgroundColor: '#0077b6',
-                padding: '10px 20px',
-                textDecoration: 'none',
-                borderRadius: '5px',
-              }}
-            >
-              All Events
-            </Link>
-          </li>
+         
           <li style={{ display: 'inline-block', marginRight: '20px' }}>
             <Link
               to="/addevent"
@@ -58,7 +45,7 @@ function Home() {
                 borderRadius: '5px',
               }}
             >
-              Delete Event
+              Manage Event
             </Link>
           </li>
           <li style={{ display: 'inline-block' }}>
@@ -72,7 +59,7 @@ function Home() {
                 borderRadius: '5px',
               }}
             >
-              joined people
+              Participant
             </Link>
           </li>
         </ul>

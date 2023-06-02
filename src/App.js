@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AdminHome from './component/AdminHome';
 import Register from './component/Register';
 import Joined from './component/joined';
+import Login from './component/login';
+import UserEvent from './component/userEvent';
 function App() {
   
   return (
@@ -16,7 +18,10 @@ function App() {
           <Route path="/deleteevent" element={<Deleteevent />} />
           <Route path="/adminhome" element={<AdminHome/>} />
           <Route path="/joined" element={<Joined/>} />
-          <Route path="/" element={<Register/>} />
+          <Route path="/" element={<Login/>} />
+          <Route path="/register" element={<Register/>} />
+            <Route path="/myevents" element={<UserEvent/> } />
+
         </Routes>
       </BrowserRouter>
 

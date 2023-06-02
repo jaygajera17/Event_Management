@@ -26,13 +26,14 @@ function Joined() {
   return (
     <div>
         
-      <h1>Joined</h1>
+      <h1>Participants</h1>
       <table>
   <thead>
     <tr>
         <th>User id</th>
       <th>User Name</th>
       <th>Event Name</th>
+      <th>Contact Number</th>
       <th>Delete</th>
 
     </tr>
@@ -43,7 +44,8 @@ function Joined() {
         <td>{event.u_Id}</td>
         <td>{event.userName}</td>
         <td>{event.eventName}</td>
-        <button className="material-icons" onClick={() => Deleteevent(event.u_Id)}>delete</button>
+        <td>{event.contactNumber}</td>
+       <td><button className="card-button" onClick={() => Deleteevent(event.u_Id)}>Delete</button></td>
       </tr>
     ))}
   </tbody>
